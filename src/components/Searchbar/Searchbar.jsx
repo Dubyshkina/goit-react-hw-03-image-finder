@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import s from './Searchbar.module.css';
+import PropTypes from 'prop-types';
 
 class Searchbar extends Component {
   state = {
@@ -16,7 +17,7 @@ class Searchbar extends Component {
       <header className={s.Searchbar}>
         <form className={s.SearchForm} onSubmit={this.handleSubmit}>
           <button type="submit" className={s.SearchForm_button}>
-            <span className={s.SearchForm_button_label}>Search</span>
+            <span>Search</span>
           </button>
           <input
             className={s.SearchForm_input}
@@ -29,5 +30,9 @@ class Searchbar extends Component {
       </header>
     );
   }
+}
+
+Searchbar.propTypes={
+  onSubmit: PropTypes.func.isRequired,
 }
 export default Searchbar;

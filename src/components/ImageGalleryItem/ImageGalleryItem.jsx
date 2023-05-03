@@ -21,5 +21,9 @@ class ImageGalleryItem extends Component {
     );
   }
 }
+ImageGalleryItem.propTypes={
+  image: PropTypes.object.isRequired,
+  OpenModal: PropTypes.func,
+}
 
 export default ImageGalleryItem;
