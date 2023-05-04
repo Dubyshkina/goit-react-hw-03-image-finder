@@ -20,9 +20,11 @@ class Modal extends Component {
     if (e.currentTarget === e.target) this.props.onClose();
     
   };
-
+  
   render() {
+    
     const { image, alt } = this.props.image;
+    console.log(image)
     return (
       <div className={s.Overlay} onClick={this.handleBackdropClick}>
         <div className={s.Modal}>
@@ -34,7 +36,7 @@ class Modal extends Component {
 }
 
 Modal.propTypes={
-  image: PropTypes.object.isRequired,
+  image: PropTypes.objectOf(PropTypes.string.isRequired),
   onClose: PropTypes.func.isRequired,
 }
 export default Modal;
